@@ -60,7 +60,7 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What terminal editor will you use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> I will use vim because, as described, it is the default on many systems. Furthermore, I **have** found myself in exactly the situation where I accidentally ended up in vim, and I learned only how to get out of it (:wq). I figured this is a good opportunity to actually learn more about it and how to navigate it.
 
 --
 
@@ -68,6 +68,8 @@ What terminal editor will you use? How did you make your decision?
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> As one who started out as an R user, I really wanted to use Rodeo as an IDE for Python because it looks so much like RStudio. Unfortunately, it still has a long way to go. I have used Atom in the past, which is very similar to Sublime, which I also have installed. I will very likely use Sublime, since I've used it before, I like the look and feel, and it's a very popular editor. However, I will also attempt to use PyCharm (Community Edition), because I really like IDEs.
+
+One of the shortcuts (for Sublime and Atom, and probably a lot of editors) that I really like and find very handy is Command + /, which turns the current line or selection into a comment, which is very handy when 'commenting out' certain lines when debugging. Customisation can be done through Preferences.
 
  
