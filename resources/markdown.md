@@ -173,7 +173,7 @@ What is the most installed language in the world?
 - Spark
 - Javascript
 
->>REPLACE THIS TEXT WITH YOUR RESPONSE
+>> According to this [Github analysis](https://github.com/blog/2047-language-trends-on-github), Javascript is at least the most used in public and private github repositories, so we can use  that as a proxy for the number of installations.
 
 -
 
@@ -186,7 +186,7 @@ What is the distribution of t-squared?
  * Beta
  * Bivariate Normal
 
->>REPLACE THIS TEXT WITH YOUR RESPONSE
+>> The square of a t distribution follows an F distribution. 
 
 ***
 
@@ -197,7 +197,7 @@ In the scikit-learn's official source repo, about how many issues are outstandin
 3. 700  
 4. 7000  
 
->>REPLACE THIS TEXT WITH YOUR RESPONSE
+>> There are over 700 [open issues](https://github.com/scikit-learn/scikit-learn/issues).
 
 ---
 
