@@ -48,13 +48,13 @@ cross-platform.
 
 Did you install Python 2 or 3? Why?  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> I have both versions. I initially installed Python 2 when I first started learning Python, and only recently switched to Python 3 because of another learning resource. I have been working with Python 3 only recently, but find the differences are so far minor. I have Python 2 as default and have to switch to a different environment for Python 3, so having the course materials in Python 2 should be no problem.
 
 ###Q2. Which Python Version Installed   
 
 How can you check the version of Python installed if you happen to be on an unfamiliar computer?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> From the terminal, I can type '''python -V'''
 
  
 
