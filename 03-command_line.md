@@ -29,7 +29,7 @@ What do the following commands do:
 `ls -Glp`
 
 > > 
-`ls`  		list contents of current directory
+`ls  		list contents of current directory`
 `ls -a`  	list 'all' contents of working directory (including hidden files)
 `ls -l`  	list in 'long format' contents of current directory
 `ls -lh`  	list in 'long format' with 'human readable' file sizes (B, M = MB, K = KB)
