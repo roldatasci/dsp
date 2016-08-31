@@ -29,15 +29,17 @@ What do the following commands do:
 `ls -Glp`
 
 > > 
-```
-`ls`      list contents of current directory
-`ls -a`  	list 'all' contents of working directory (including hidden files)
-`ls -l`  	list in 'long format' contents of current directory
-`ls -lh`  list in 'long format' with 'human readable' file sizes (B, M = MB, K = KB)
-`ls -lah` list in 'long format' 'all' contents, with 'human readable' file size
-`ls -t`  	list contents sorted by 'timestamp' (last modified)
-`ls -Glp` list in 'long format', with directories highighted and a'p'pended with '/'
-```
+
+Command | Result
+------- | ------
+'ls' | list contents of current directory
+ls -a | list 'all' contents of working directory (including hidden files)
+ls -l | list in 'long format' contents of current directory
+ls -lh | list in 'long format' with 'human readable' file sizes (B, M = MB, K = KB)
+ls -lah | list in 'long format' 'all' contents, with 'human readable' file size
+ls -t | list contents sorted by 'timestamp' (last modified)
+ls -Glp | list in 'long format', with directories highighted and a'p'pended with '/'
+
 ---
 
 ###Q3.  More List Files in Unix  
