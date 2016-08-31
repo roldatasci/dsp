@@ -13,7 +13,9 @@ these in a couple of hours.
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do, focused on things that are new, interesting, or otherwise worth remembering.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> > Command | Result
+> > ------- | ------
+> > pwd | print working directory
 
 ---
 
@@ -32,7 +34,7 @@ What do the following commands do:
 
 Command | Result
 ------- | ------
-'ls' | list contents of current directory
+ls | list contents of current directory
 ls -a | list 'all' contents of working directory (including hidden files)
 ls -l | list in 'long format' contents of current directory
 ls -lh | list in 'long format' with 'human readable' file sizes (B, M = MB, K = KB)
