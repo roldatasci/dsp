@@ -82,8 +82,8 @@ What does `xargs` do? Give an example of how to use it.
 
 > > A common use of `xargs` is to combine it with `find` and `grep`, though there are [other handy uses](http://javarevisited.blogspot.com/2012/06/10-xargs-command-example-in-linux-unix.html). `find` can return multiples files as output, each of which `grep` can use as its argument to search for a "pattern".
 
-As a concrete example, suppose you need to search through all your python scripts for a Car class you have previously constructed.
+> > As a concrete example, suppose you need to search through all your python scripts for a Car class you have previously constructed.
 
 `find . -name "*.py" | xargs grep "Car"`
 
-The above series of commands will find all files in the current working directory (.) or below that are named with a .py extension (i.e. all python files). The result of this first query (to the left of the pipe '|') would be a collection of files that are then passed by `xargs` as input for the next query (to the right of the pipe '|') using `grep`. `grep` will go through each of those files to search for "Car" inside each file.
+> > The above series of commands will find all files in the current working directory (.) or below that are named with a .py extension (i.e. all python files). The result of this first query (to the left of the pipe '|') would be a collection of files that are then passed by `xargs` as input for the next query (to the right of the pipe '|') using `grep`. `grep` will go through each of those files to search for "Car" inside each file.
