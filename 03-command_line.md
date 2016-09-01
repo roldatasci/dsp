@@ -14,27 +14,25 @@ these in a couple of hours.
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do, focused on things that are new, interesting, or otherwise worth remembering.
 
 > > Command | Result
-> > ------------------------------ | ------
+> > ------- | ------
 > > pwd | print working directory
-> > man <command> | access the 'manual'/documentation (use 'q' to exit)
-> > rm <file1> <file2> | remove multiple files
-> > pushd <new_dir> | 'push' current directory to a list, then go to <new_dir>
+> > man command | access the 'manual'/documentation (use 'q' to exit)
+> > rm file1 file2 | remove multiple files
+> > pushd new_dir | 'push' current directory to a list, then go to new_dir
 > > popd | 'pop' up the last saved directory location and go there
-> > cp <file1> <file2> | 'copy' contents of <file1> to <file2>
-> > cp <file> <new_path> | 'copy' <file> to a new directory <new_path> without changing original file
-> > cp -r <dir1> <dir2> | 'copy' 'recursively' all contents of <dir1> to <dir2>
-> > cp -r . ../<new_dir> | 'copy' 'recursively' all contents of current working directory to a new directory one level up 
-> > mv <file1> <file2> | rename <file1> as <file2> ('moves' contents of <file1> to <file2>)
-> > mv <dir1> <dir2> | rename <dir1> as <dir2>
-> > mv <file> <dir> | move <file> to <dir>
-> > less <file>	| page through a file ('q' to exit)
-> > cat <file.ext> | print whole file ('q' to exit)
-> > cat <file1> <file2> | join both files and print ('q' to exit)
-> > find <startdir> <pattern> | finds in starting directory files that match pattern 
-> > grep -i <pattern> <file> | case 'insensitve' search for string pattern in <file>  
-> > 
+> > cp file1 file2 | 'copy' contents of file1 to file2
+> > cp file new_path | 'copy' file to a new directory (new_path) without changing original file
+> > cp -r dir1 dir2 | 'copy' 'recursively' all contents of dir1 to dir2
+> > cp -r . ../new_dir | 'copy' 'recursively' all contents of current working directory to a new directory one level up 
+> > mv file1 file2 | rename file1 as file2 ('move' contents of file1 to file2)
+> > mv dir1 dir2 | rename dir1 as dir2
+> > mv file dir | move file to dir
+> > less file	| page through a file ('q' to exit)
+> > cat file.ext | print whole file ('q' to exit)
+> > cat file1 file2 | join both files and print ('q' to exit)
+> > find startdir pattern | finds in starting directory files that match pattern 
+> > grep -i pattern file | case 'insensitve' search for string pattern in file
 > > clear | 'clear' all output in terminal/console
-
 
 ---
 
@@ -71,7 +69,7 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 > > ls -o | list in 'long format', no gr'o'up names
 > > ls -u | list contents sorted by time it was accessed
 > > ls -1 | list contents in rows only (no multiple columns)
-> > ls -R <dirname> | list subdi'R'ectories of <dirname> and their contents
+> > ls -R dirname | list subdi'R'ectories of dirname and their contents
 > > ls -G1p | list in rows only (no multiple columns),  directories highlighted in blue,  and with a'p'pended with '/'
 
 ---
@@ -82,7 +80,7 @@ What does `xargs` do? Give an example of how to use it.
 
 > > `xargs` is a command that can take the output from one command and 'execute' it as an input 'argument' for the next command, where the two commands are separated by a pipe ('|'). This effectively facilitates the execution of a series of commands, each with their own inputs/arguments and outputs that are chained together, with `xargs` passing output from one as input to another.
 
-A common use of `xargs` is to combine it with `find` and `grep`, though there are [other handy uses](http://javarevisited.blogspot.com/2012/06/10-xargs-command-example-in-linux-unix.html). `find` can return multiples files as output, each of which `grep` can use as its argument to search for a "pattern".
+> > A common use of `xargs` is to combine it with `find` and `grep`, though there are [other handy uses](http://javarevisited.blogspot.com/2012/06/10-xargs-command-example-in-linux-unix.html). `find` can return multiples files as output, each of which `grep` can use as its argument to search for a "pattern".
 
 As a concrete example, suppose you need to search through all your python scripts for a Car class you have previously constructed.
 
