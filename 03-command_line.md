@@ -84,6 +84,6 @@ What does `xargs` do? Give an example of how to use it.
 
 > > As a concrete example, suppose you need to search through all your python scripts for a Car class you have previously constructed.
 
-`find . -name "*.py" | xargs grep "Car"`
+> > `find . -name "*.py" | xargs grep "Car"`
 
 > > The above series of commands will find all files in the current working directory (.) or below that are named with a .py extension (i.e. all python files). The result of this first query (to the left of the pipe '|') would be a collection of files that are then passed by `xargs` as input for the next query (to the right of the pipe '|') using `grep`. `grep` will go through each of those files to search for "Car" inside each file.
