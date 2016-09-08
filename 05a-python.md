@@ -53,9 +53,39 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> `lambda` functions are essentially temporary functions. It is generally used for situations where a larger operation requires smaller operations that would otherwise require defining yet another function that won't necessarily be used again (thus taking up memory). In this case, it would be better to use a temporary `lambda` function.
+>> `lambda` functions are essentially temporary functions. It is generally used for situations where an operation requires another intermediate operation that would normally require defining an additional function that won't necessarily be used again (thus taking up memory). In this case, it would be better to use a temporary `lambda` function.
 
->> Suppose
+>> Below are some examples of using lambda in conjunction with built-in functions:
+
+>> ```python
+>> # 1) using lambda with sorted
+>> 
+>> # example: sort list by order of each element's last letter
+>> peanuts = ['snoopy', 'woodstock', 'charlie']
+>> print sorted(peanuts, key = lambda name: name[-1]) # ['charlie', 'woodstock', 'snoopy']
+>> 
+>> # 2) using lambda with filter
+>> 
+>> # example: use filter to subset words that are palindromes
+>> word_list = ['noon', 'morn', 'civic', 'center', 'radar', 'racecar']
+>> filter(lambda word: word == word[::-1], word_list) # python 2
+>> list(filter(lambda word: word == word[::-1], word_list)) # must convert to list in python 3
+>> 
+>> # example: use filter to subset even numbers
+>> num_range = range(1, 11) # list(range(1, 11)) in python 3
+>> print(num_range) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>> odds = filter(lambda num: num % 2 != 0, num_range)
+>> # odds = list(filter(lambda num: num % 2 != 0, num_range)) # python 3
+>> print(odds) # [1, 3, 5, 7, 9]
+>> 
+>> # 3) using lambda with map
+>>
+>> # example: return a list of ending letters
+>> peanuts = ['snoopy', 'woodstock', 'charlie']
+>> ends = map(lambda name: name[-1], peanuts)
+>> # ends = list(map(lambda name: name[-1], peanuts)) # python 3
+>> print(ends) # ['y', 'k', 'e']
+>> ```
 
 ---
 
@@ -63,7 +93,45 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> List comprehensions are a more concise way of constructing lists based on conditions, compared to using a for loop. List comprehensions can do the same things that map and filter can do, without having to use lambda functions.
+
+>> Below is a comparison of list comprehensions vs. map and filter for the same examples above.
+
+>> ```python 
+>> # using list comprehension (vs. filter) to subset even numbers
+>> num_range = list(range(1, 11))
+>> odds = [num for num in num_range if num % 2 != 0]
+>> print(odds) # [1, 3, 5, 7, 9]
+>>
+>> # using list comprehension (vs. map) to return a list of ending letters
+>> peanuts = ['snoopy', 'woodstock', 'charlie']
+>> ends = [name[-1] for name in peanuts]
+>> print(ends) # ['y', 'k', 'e']
+>> ```
+
+>> Below is an example of set comprehension. It's just like a list comprehension, except that it uses {}.
+
+>> ```python
+>> # construct a set of odd numbers from num_range
+>> num_range = list(range(1, 11))
+>> oddset = {num for num in num_range if num % 2 != 0}
+>> print(oddset) # {1, 3, 5, 9, 7}
+>> ```
+
+>> Below are some examples of dictionary comprehension. It also uses {}, but uses pairs.
+>>
+>> ```python
+>> # construct a dictionary from two lists
+>> car_model = ['model x', 'model s']
+>> low_price = [75200, 67200]
+>> price_table = {car:price for (car, price) in zip(car_model, low_price)}
+>> print(price_table) # {'model x': 75200, 'model s': 67200}
+>> 
+>> # construct a dictionary of integers as keys and their squares as values
+>> num_range = list(range(1,11))
+>> square_table = {num:num**2 for num in num_range}
+>> print(square_table) # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}
+>> ```
 
 ---
 
@@ -78,7 +146,7 @@ date_start = '01-02-2013'
 date_stop = '07-28-2015'
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+>> There are 937 days between `01-02-2013` and `07-28-2015`.
 
 b.  
 ```
@@ -86,7 +154,7 @@ date_start = '12312013'
 date_stop = '05282015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+>> There are 513 days between `12312013` and `05282015`.
 
 c.  
 ```
@@ -94,7 +162,7 @@ date_start = '15-Jan-1994'
 date_stop = '14-Jul-2015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE  (answer will be in number of days)
+>> There are 7850 days between `15-Jan-1994` and `14-Jul-2015`. 
 
 Place code in this file: [q5_datetime.py](python/q5_datetime.py)
 
@@ -112,8 +180,4 @@ Edit the 5 functions in [q7_lists.py](python/q7_lists.py)
 
 ###Q8. Parsing
 Edit the 3 functions in [q8_parsing.py](python/q8_parsing.py)
-
-
-
-
 
