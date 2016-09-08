@@ -12,7 +12,7 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> **Similarities:** both lists and tuples are **ordered** collections of elements, both are **iterable** (can operate on each of its elements), and both can contain elements of **different types** (i.e. their elements can be a mixture of str, int, float, etc.).
+>> **Similarities:** both lists and tuples are **ordered** collections of elements, both are **iterable** (can operate on each of its elements), and both can contain **elements of different types** (i.e. their elements can be a mixture of str, int, float, etc.).
 
 >> **Differences:** the most significant difference between lists and tuples is that **lists are mutable** (meaning they can be changed, added to, etc.), whilst **tuples are IMmutable** (they CANNOT be changed).
 
@@ -24,7 +24,28 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> **Similarities:** both lists and sets are **iterable**, **mutable**, and can contain **elements of different types**.
+
+>> **Differences:** lists are **ordered**, whilst sets are **UNordered**. As well, sets contain only _unique_ elements, whilst lists can contain the same element/value multiple times.
+
+>> The uniqueness of elements in sets makes it perform better for finding an element (i.e. checking membership) because it behaves like a dictionary in terms of lookups (it doesn't traverse every single element like a list does), and is sometimes described as a dictionary with only keys (no corresponding values). However, if the operation requires iteration, anyway, lists are probably better by design.
+
+>> As an example, suppose we have two lists and we are trying to determine whether one list is contained in the other (i.e. one is a _subset_ of the other). Since set operations in python are designed to work like mathematical set operations, it would be faster to use sets in this problem.
+
+>> ```python
+>> a = [1,2,2,3,4,5,6,7,4,5,6,7,3,4,5,6]
+>> b = [1,2,3,5]
+>> 
+>> # solution using lists
+>> counter = 0
+>> for elem in b:
+>>     if elem in a:
+>>         counter += 1
+>> print(counter == len(b)) # True
+>> 
+>> # solution using sets
+>> set(b).issubset(a) # True
+>> ```
 
 ---
 
@@ -32,7 +53,9 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> `lambda` functions are essentially temporary functions. It is generally used for situations where a larger operation requires smaller operations that would otherwise require defining yet another function that won't necessarily be used again (thus taking up memory). In this case, it would be better to use a temporary `lambda` function.
+
+>> Suppose
 
 ---
 
