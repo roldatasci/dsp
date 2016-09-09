@@ -15,7 +15,16 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+    counter = 0
+    for word in words:
+        if len(word) >= 2 and word[0] == word[-1]:
+            counter += 1
+    return counter
+
+if __name__ == '__main__':
+    print(match_ends(['aba', 'xyz', 'aa', 'x', 'bbb'])) # 3
+    print(match_ends(['', 'x', 'xy', 'xyx', 'xx'])) # 2
+    print(match_ends(['aaa', 'be', 'abc', 'hello'])) # 1
 
 
 def front_x(words):
@@ -32,7 +41,17 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
+    x_words = sorted([word for word in words if word[0] == 'x'])
+    not_x_words = sorted([word for word in words if word[0] != 'x'])    
+    return x_words + not_x_words
+
+if __name__ == '__main__':
+    print(front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa']))
+    # ['xaa', 'xzz', 'axx', 'bbb', 'ccc']
+    print(front_x(['ccc', 'bbb', 'aaa', 'xcc', 'xaa']))
+    # ['xaa', 'xcc', 'aaa', 'bbb', 'ccc']
+    print(front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark']))
+    # ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
 
 
 def sort_last(tuples):
@@ -49,7 +68,12 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
+    return sorted(tuples, key = lambda tuple: tuple[-1]) # index each tuple's last element
+
+if __name__ == '__main__':
+    print(sort_last([(1, 3), (3, 2), (2, 1)])) # [(2, 1), (3, 2), (1, 3)]
+    print(sort_last([(2, 3), (1, 2), (3, 1)])) # [(3, 1), (1, 2), (2, 3)]
+    print(sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])) # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 
 
 def remove_adjacent(nums):
@@ -68,7 +92,16 @@ def remove_adjacent(nums):
     >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
+    # isolate index and value using enumerate
+    # keep first num (zeroth index or idx == 0),
+    # and check that the current num is not equal to previous num (nums[idx - 1])
+    return [num for idx, num in enumerate(nums) if idx == 0 or num != nums[idx - 1]]
+
+if __name__ == '__main__':
+    print(remove_adjacent([1, 2, 2, 3])) # [1, 2, 3]
+    print(remove_adjacent([2, 2, 3, 3, 3])) # [2, 3]
+    print(remove_adjacent([3, 2, 3, 3, 3])) # [3, 2, 3]
+    print(remove_adjacent([])) # []
 
 
 def linear_merge(list1, list2):
@@ -85,4 +118,9 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+    return (sorted(list1 + list2))
+
+if __name__ == '__main__':
+    print(linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc'])) # ['aa', 'bb', 'cc', 'xx', 'zz']
+    print(linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz'])) # ['aa', 'bb', 'cc', 'xx', 'zz']
+    print(linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])) # ['aa', 'aa', 'aa', 'bb', 'bb']
