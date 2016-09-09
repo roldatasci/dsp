@@ -18,7 +18,13 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
+    return 'Number of donuts: {}'.format(count) if int(count) < 10 else 'Number of donuts: many'
+
+if __name__ == '__main__':
+    print(donuts(4)) # Number of donuts: 4
+    print(donuts(9)) # Number of donuts: 9
+    print(donuts(10)) # Number of donuts: many
+    print(donuts(99)) # Number of donuts: many
 
 
 def both_ends(s):
@@ -37,7 +43,13 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    return '' if len(s) < 2 else s[:2] + s[-2:]
+
+if __name__ == '__main__':
+    print(both_ends('spring')) # spng
+    print(both_ends('Hello')) # Helo
+    print(both_ends('a')) # (no output)
+    print(both_ends('xyz')) # xyyz
 
 
 def fix_start(s):
@@ -56,7 +68,16 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    # modif = s[1:]
+    # for char in modif:
+    #     if char == s[0]
+    return s[0] + s[1:].replace(s[0],'*')
+
+if __name__ == '__main__':
+    print(fix_start('babble')) # ba**le
+    print(fix_start('aardvark')) # a*rdv*rk
+    print(fix_start('google')) # goo*le
+    print(fix_start('donut')) # donut
 
 
 def mix_up(a, b):
@@ -74,7 +95,13 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    if len(a) >= 2 and len(b) >= 2: return b[0:2] + a[2:] + ' ' + a[0:2] + b[2:]
+
+if __name__ == '__main__':
+    print(mix_up('mix','pod')) # pox mid
+    print(mix_up('dog','dinner')) # dig donner
+    print(mix_up('gnash','sport')) # spash gnort
+    print(mix_up('pezzy','firm')) # fizzy perm
 
 
 def verbing(s):
@@ -91,7 +118,17 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
+    if len(s) >= 3:
+        if s[-3:] != 'ing':
+            s += 'ing'
+        else:
+            s += 'ly'
+    return s
+
+if __name__ == '__main__':
+    print(verbing('hail')) # hailing
+    print(verbing('swiming')) # swimingly
+    print(verbing('do')) # do
 
 
 def not_bad(s):
@@ -111,7 +148,17 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    not_idx = s.find('not')
+    bad_idx = s.find('bad')
+    if bad_idx > not_idx:
+        s = s.replace(s[not_idx:bad_idx+3], 'good')
+    return s
+
+if __name__ == '__main__':
+    print(not_bad('This movie is not so bad')) # This movie is good
+    print(not_bad('This dinner is not that bad!')) # This dinner is good!
+    print(not_bad('This tea is not hot')) # This tea is not hot
+    print(not_bad("It's bad yet not")) # It's bad yet not
 
 
 def front_back(a, b):
@@ -130,4 +177,21 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    if len(a) % 2 == 0:
+        a_front = a[:int(len(a) / 2)]
+        a_back = a[int(len(a) / 2):]
+    else:
+        a_front = a[:int(len(a) / 2) + 1]
+        a_back = a[int(len(a) / 2) + 1:]
+    if len(b) % 2 == 0:
+        b_front = b[:int(len(b) / 2)]
+        b_back = b[int(len(b) / 2):]
+    else:
+        b_front = b[:int(len(b) / 2) + 1]
+        b_back = b[int(len(b) / 2) + 1:]
+    return a_front + b_front + a_back + b_back
+
+if __name__ == '__main__':
+    print(front_back('abcd','xy')) # abxcdy
+    print(front_back('abcde','xyz')) # abcxydez
+    print(front_back('Kitten','Donut')) # KitDontenut
