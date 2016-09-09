@@ -30,4 +30,3 @@ def smallest_diff(data):
     return team_diffs[0][1] # return first tuple's second element
 
 print(smallest_diff(data)) # Aston_Villa
-[('1', 'Aston_Villa'), ]
