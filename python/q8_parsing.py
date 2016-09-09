@@ -26,7 +26,8 @@ def smallest_diff(data):
     teams = [row[0] for row in data]
     diffs = [abs(int(row[5]) - int(row[6])) for row in data]
     team_diffs = list(zip(diffs, teams))
-    team_diffs.sort()
+    team_diffs.sort() # sorting in place
     return team_diffs[0][1] # return first tuple's second element
 
 print(smallest_diff(data)) # Aston_Villa
+[('1', 'Aston_Villa'), ]
