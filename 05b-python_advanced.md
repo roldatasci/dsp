@@ -19,21 +19,21 @@ This data is available in this file:  [faculty.csv](python/faculty.csv)
 
 ####Q1. Find how many different degrees there are, and their frequencies: Ex:  PhD, ScD, MD, MPH, BSEd, MS, JD, etc.
 
->> The number of PhD degrees is 30
->> The number of ScD degrees is 6
->> The number of MPH degrees is 2
->> The number of MS degrees is 2
->> The number of MD degrees is 1
->> The number of BSEd degrees is 1
->> The number of JD degrees is 1
->> The number of MA degrees is 1
+>> The number of PhD degrees is 30  
+>> The number of ScD degrees is 6  
+>> The number of MPH degrees is 2  
+>> The number of MS degrees is 2  
+>> The number of MD degrees is 1  
+>> The number of BSEd degrees is 1  
+>> The number of JD degrees is 1  
+>> The number of MA degrees is 1  
 
 
 ####Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
 
->> The number of staff with the title Professor of Biostatistics is 13
->> The number of staff with the title Assistant Professor of Biostatistics is 12
->> The number of staff with the title Associate Professor of Biostatistics is 12
+>> The number of staff with the title Professor of Biostatistics is 13  
+>> The number of staff with the title Assistant Professor of Biostatistics is 12  
+>> The number of staff with the title Associate Professor of Biostatistics is 12  
 
 
 ####Q3. Search for email addresses and put them in a list.  Print the list of email addresses.
