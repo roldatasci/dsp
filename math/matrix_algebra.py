@@ -1,5 +1,3 @@
-# Matrix Algebra
-
 # LINEAR ALGEBRA WORKSHEET
 
 import numpy as np 
@@ -78,7 +76,7 @@ print(np.subtract(u, v))
 # OR
 print(u - v) # [ 3 -3 -2  1]
 
-# 2.3) a * u, (a = 6)
+# 2.3) a * u, (alpha = 6)
 print(np.multiply(alpha, u))
 # OR
 print(alpha * u) # [ 36  12 -18  30]
@@ -94,7 +92,7 @@ print(np.linalg.norm(u)) # 8.60232526704
 # NOTE (to self):
 # outer products (col vector x row vector = matrix)
 
-# utranspose * v ()
+# utranspose * v
 # print(np.outer(u, v))
 # [[ 18  30  -6  24]
 #  [  6  10  -2   8]
@@ -167,4 +165,4 @@ print(D.transpose() * D)
 # [[10 -4  0]
 #  [-4  8  8]
 #  [ 0  8 10]]
- 
+
