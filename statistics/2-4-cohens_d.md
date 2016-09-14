@@ -9,22 +9,25 @@ import math
 import nsfg # make sure to run nsfg.py so that data is clean
 
 preg = nsfg.ReadFemPreg() # read in full df
-# create a smaller df by subsetting observations for which 'outcomes' = 1
-# preg.outcomes == 1 is a boolean Series used for masking
+# create a smaller df by subsetting observations for which 'outcome' == 1
+# preg.outcome == 1 is a boolean Series used for masking
 live = preg[preg.outcome == 1] # smaller df restricted to live birth observations
 
 # split df 'live' into df for first babies ('firsts') and for 'others'
 firsts = live[live.birthord == 1]
 others = live[live.birthord != 1]
 
-# define function for Cohen's d
+# define function for Cohen's d (pg. 25, ThinkStats2)
 
 def CohenEffectSize(group1, group2):
+
 	'''
 	inputs: single variable for group1 and group2
 	output: Cohen's d = ratio of between group difference to
 	within-group variability (pooled standard deviation)
-	interpretation: d is the difference in means (in standard deviations)'''
+	interpretation: d is the difference in means (in standard deviations)
+	'''
+
 	diff = group1.mean() - group2.mean()
 	var1, var2 = group1.var(), group2.var()
 	n1, n2 = len(group1), len(group2)
@@ -33,7 +36,7 @@ def CohenEffectSize(group1, group2):
 	return d
 
 # isolate the variables 'totalwgt_lb' and 'prglngth' from each df
-# and pass it to the function below
+# and pass it to the function defined above
 if __name__ == '__main__':
 	print(CohenEffectSize(firsts.totalwgt_lb, others.totalwgt_lb)) # -0.089
 	print(CohenEffectSize(firsts.prglngth, others.prglngth)) # 0.029
@@ -41,14 +44,14 @@ if __name__ == '__main__':
 
 >> Interpretation:
 
->> The Cohen's d computed (-0.089) for total weight in lbs shows that first babies 
+>> The Cohen's d computed for total weight in lbs (-0.089) shows that first babies 
 >> tend to weight LESS than other babies. However, the effect size, while larger
 >> than that for pregnancy length, is essentially negligible.
 
->> The author (Downey) interprets the 'd' value as the difference in means
+>> The author (Downey) interprets the Cohen's d value as the difference in means
 >> in standard deviations. In this case, we would say that the difference
 >> in means for total weights between first babies and other babies is only 0.089
 >> standard deviations.
 
->> In comparison, the difference in means for pregnancy length between first babies
+>> In comparison, the difference in means for pregnancy lengths between first babies
 >> and other babies is even smaller, at only 0.029 standard deviations.   
