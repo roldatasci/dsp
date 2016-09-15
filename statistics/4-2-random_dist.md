@@ -15,7 +15,7 @@ sample = np.random.random(1000)
 cdf = thinkstats2.Cdf(sample)
 pmf = thinkstats2.Pmf(sample)
 
-thinkplot.PrePlot(2, cols = 2) # side by side plots
+thinkplot.PrePlot(cols = 2) # side by side plots
 thinkplot.Pmf(pmf, label = 'PMF(x)', linewidth = 0.1) # suppress this legend in .Config()
 thinkplot.Config(title = 'PMF of Sample from Uniform Distribution', 
 	xlabel = 'x', ylabel = 'PMF(x)', legend = False)
