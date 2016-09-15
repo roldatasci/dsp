@@ -34,5 +34,5 @@ thinkplot.Show(title = 'CDF of Sample from Uniform Distribution',
 >> each value in the sample has equal probability.
 
 >> The CDF plot shows a virtually straight 45-degree line, which indicates that
->> that for each value in the sample, the corresponding percentile rank is 
+>> for each value in the sample, the corresponding percentile rank is 
 >> basically the same. That is, for x = 0.2, its percentile rank (CDF(x)) = 0.2.
