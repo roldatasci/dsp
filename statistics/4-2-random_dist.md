@@ -25,6 +25,8 @@ thinkplot.Show(title = 'CDF of Sample from Uniform Distribution',
 	xlabel = 'x', ylabel = 'CDF(x)', legend = False)
 ```
 
+![pmf_cdf](https://github.com/roldatasci/dsp/blob/master/statistics/4-2-plot.png)
+
 >> Looking at both the PMF and CDF, it appears that the sample's distribution
 >> is essentially uniform, which validates the random.random() generated values.
 
