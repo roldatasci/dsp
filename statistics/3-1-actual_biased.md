@@ -55,7 +55,7 @@ thinkplot.Pmfs([pmf, biased_pmf]) # plot PMF step functions
 thinkplot.Show(xlabel = 'no. of children under 18 in household', ylabel = 'PMF')
 ```
 
-![actual_bias](statistics/3-1-plot.png)
+![actual_bias](https://github.com/roldatasci/dsp/blob/master/statistics/3-1-plot.png)
 
 ```python
 # means for actual vs biased distributions
