@@ -63,9 +63,14 @@ print(pmf.Mean()) # mean for actual distribution = 1.02
 print(biased_pmf.Mean()) # mean for biased distribution = 2.4
 ```
 
->> The distributions show that the actual distribution has a much longer right 
->> tail, whilst the biased distribution seems slightly more normal (but still 
+>> The plots show that the actual distribution has a much longer right tail, 
+>> whilst the biased distribution seems slightly more normal (but still 
 >> right-skewed). The computed means of the two distributions show that 
 >> the actual distribution has a mean of around 1.02 (children under 18), whilst
 >> the biased distribution has a mean of around 2.4, more than double the actual
->> distribution. This is a significant difference.
+>> distribution.
+
+>> This is a significant difference, biased towards larger families and their
+>> higher tendency to report. Naturally, families with no children do not have
+>> any children responding to a survey about the number of children in their
+>> household.
