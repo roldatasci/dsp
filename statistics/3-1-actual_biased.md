@@ -53,9 +53,11 @@ thinkplot.PrePlot(2) # to generate 2 different colours
 thinkplot.Pmfs([pmf, biased_pmf]) # plot PMF step functions
 # modify plot labels and show the plot
 thinkplot.Show(xlabel = 'no. of children under 18 in household', ylabel = 'PMF')
+```
 
 ![actual_bias](statistics/3-1-plot.png)
 
+```python
 # means for actual vs biased distributions
 print(pmf.Mean()) # mean for actual distribution = 1.02
 print(biased_pmf.Mean()) # mean for biased distribution = 2.4
