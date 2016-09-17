@@ -108,10 +108,12 @@ What about fraternal twins? Given two fraternal twins, what is the probability
 that both twins will be boys?
 Pr(B|F) = 1/4
 
-Wny?
-Fraternal twins do not have to have the same sex, so each sibling has probability of 1/2 of being a boy. There are two siblings, so (1/2)*(1/2)
+Why?
+Fraternal twins do not have to have the same sex, so each sibling has probability of 1/2 of being a boy.
+There are two siblings, so (1/2)*(1/2) = 1/4.
 
 Computation:
+
 Pr(I|B) = Pr(B|I)*Pr(I) / Pr(B|I)*Pr(I) + Pr(B|F)*Pr(F)
 = (1/2)*(1/300) / (1/2)*(1/300) + (1/4)*(1/125)
 = 5/11
