@@ -70,14 +70,64 @@ Bayes' Theorem is an important tool in understanding what we really know, given 
 
 Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+```
+Definitions:
+
+Let:
+F = fraternal twins
+I = identical twins
+B = twin brother
+
+We need to know: Pr(I|B)
+(having knowledge that Elvis had a twin brother, 
+what is the probability that Elvis was an identical twin?)
+
+Derivations:
+
+Pr(I|B) = Pr(I and B) / Pr(B)
+Pr(B|I) = Pr(I and B) / Pr(I)
+==> Pr(I and B) = Pr(I|B)*Pr(B) = Pr(B|I)*Pr(I)
+
+Also:
+Pr(B) = Pr(B|I)*Pr(I) + Pr(B|F)*Pr(F) # disjoint probabilities
+
+==> Pr(I|B) = Pr(B|I)*Pr(I) / Pr(B|I)*Pr(I) + Pr(B|F)*Pr(F)
+
+We are given:
+Pr(I) = 1/300
+Pr(F) = 1/125
+
+Given identical twins, what is the probability that both twins will be boys?
+Pr(B|I) = 1/2
+
+Why?
+Identical twins MUST have the same sex, so the choice is either boy or girl
+(assuming only two genders), so probability of being both boys is 1/2.
+
+What about fraternal twins? Given two fraternal twins, what is the probability
+that both twins will be boys?
+Pr(B|F) = 1/4
+
+Wny?
+Fraternal twins do not have to have the same sex, so each sibling has probability of 1/2 of being a boy. There are two siblings, so (1/2)*(1/2)
+
+Computation:
+Pr(I|B) = Pr(B|I)*Pr(I) / Pr(B|I)*Pr(I) + Pr(B|F)*Pr(F)
+= (1/2)*(1/300) / (1/2)*(1/300) + (1/4)*(1/125)
+= 5/11
+~ 0.45
+
+There is 5/11 or about 0.45 probability that Elvis is an identical twin.
+```
 
 ---
 
 ###Q6. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Frequentist analysis assumes that population parameters are fixed, but unknown (most of the time). It is the data that is random. The approach is to sample the population repeatedly, and construct a 95% confidence interval for each sample. The interpretation is that given repeated sampling, the true population parameter will be captured in the set of confidence intervals 95% of the time.
+
+>> In contrast, bayesian analysis views population parameters as random, and the data as fixed. Probability intervals (as opposed to confidence intervals) are constructed for the parameters. The other major difference is the use of prior distributions, and updating this to get a posterior distribution.
 
 ---
 
